@@ -1,4 +1,4 @@
 if Arseniy=gey:
-  our_win=true
+  our_win==true
 else:
   pass

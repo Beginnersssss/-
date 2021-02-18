@@ -1,4 +1,4 @@
-if Arseniy==gey:
-  our_win=true
+if Arseniy == gey:
+  our_win = true
 else:
   pass

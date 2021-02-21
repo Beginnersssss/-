@@ -1,10 +1,12 @@
 import React from 'react'
 import {BrowserRouter as Router} from "react-router-dom"
 import {useRoutes} from "./routes"
+import "./App.css"
 import {useAuth} from './hooks/auth.hook'
 import {AuthContext} from "./context/AuthContext"
 import {Navbar} from './components/Navbar'
 import 'materialize-css'
+import {Switch} from "react-router-dom"
 
 function App() {
     const {token, login, logout, userId} = useAuth()
@@ -15,10 +17,12 @@ function App() {
           token, login, logout, userId, isAuthenticated
       }}>
           <Router>
-              { isAuthenticated && <Navbar />}
-              <div className="container">
-                  {routes}
-              </div>
+                { isAuthenticated && <Navbar />}
+                <Switch>
+                <div className="container">
+                    {routes}
+                </div>
+                </Switch>
           </Router>
       </AuthContext.Provider>
   )

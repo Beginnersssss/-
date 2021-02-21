@@ -1,16 +1,24 @@
 import React from 'react'
 import {Switch, Route, Redirect} from 'react-router-dom'
-import {StatPage} from './pages/StatPage'
+import {Enter} from './pages/Enter'
 import {AuthPage} from './pages/AuthPage'
+import {Graph} from './pages/Graph'
+import {Home} from './pages/Home'
 
 export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {
         return (
             <Switch>
-                <Route path="/stats" exact>
-                    <StatPage />
+                <Route path="/enter" exact>
+                    <Enter />
                 </Route>
-                <Redirect to="/stats" />
+                <Route path="/home" exact>
+                    <Home />
+                </Route>
+                <Route path="/graph" exact>
+                    <Graph />
+                </Route>
+                <Redirect to="/home" />
             </Switch>
         )
     }

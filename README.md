@@ -1,2 +1,1 @@
-Ave Python
- by Nikita Nedotsukov
+Здесь был я.
